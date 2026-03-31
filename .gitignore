@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+*.so          # compiled extensions
+
+# C
+*.o
+*.a
+*.out
+c/build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# General
+.DS_Store
