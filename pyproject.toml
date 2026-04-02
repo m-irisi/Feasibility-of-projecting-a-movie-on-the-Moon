@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "moon-projector"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "astropy",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["moon_tracking*", "photon_trajectories*"]

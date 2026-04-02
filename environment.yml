@@ -1,0 +1,29 @@
+name: moon-projector
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python
+  - python=3.11
+
+  # Core scientific stack
+  - numpy
+  - matplotlib
+  - astropy
+
+  # Jupyter
+  - jupyterlab
+  - ipykernel
+
+  # C toolchain
+  - cmake
+  - gcc          # omit on macOS, use system clang instead
+
+  # Dev tools
+  - pytest
+  - pip
+
+  # Install your own package via pip (reads pyproject.toml)
+  - pip:
+    - -e .
