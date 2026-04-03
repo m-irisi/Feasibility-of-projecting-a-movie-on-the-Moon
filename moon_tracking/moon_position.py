@@ -30,7 +30,7 @@ def calendar_to_T(year, month, day, hour=0, minute=0, second=0):
          + int(30.6001 * (month + 1))
          + day_dec + B - 1524.5)
     JDE = JD + 69.0 / 86400.0          # UTC -> TT
-    T   = (JDE - 2451545.0) / 36525.0
+    T   = (JDE - 2451545.0) / 36525.0 # Meeus (1998), eq. 22.1 pg 143
     return T, JDE
 
 
@@ -265,7 +265,7 @@ def compute_sums(T, D, M, Mp, F, A1, A2, A3, Lp):
 
     # Table 47.A: longitude and distance
     for (cD, cM, cMp, cF, sl, sr) in TABLE_47A:
-        theta = cD*D + cM*M + cMp*Mp + cF*F
+        theta = (cD*D + cM*M + cMp*Mp + cF*F) % 360
 
         # Eccentricity correction based on |c_M|
         abs_cM = abs(cM)
